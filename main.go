@@ -16,9 +16,13 @@ func main() {
 	}
 
 	fmt.Println("Number of lines in your file is", countLines(string(data)))
-
+	fmt.Println("Number of runes in your file is", countRunes(string(data)))
 }
+
 func countLines(data string) int {
 	return strings.Count(data, "\n") + 1
+}
 
+func countRunes(data string) int {
+	return strings.Count(data, "") - 1
 }
