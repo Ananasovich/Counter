@@ -42,3 +42,21 @@ func TestCountRunes(t *testing.T) {
 		}
 	}
 }
+
+var testWord = []testpair{
+	{"Such symbols much wow!", 4},
+	{"Считаем кириллицу\nс разными символами       тут", 6},
+}
+
+func TestCountWords(t *testing.T) {
+	for _, pair := range testWord {
+		v := countWords(pair.value)
+		if v != pair.result {
+			t.Error(
+				"For", pair.value,
+				"Expected", pair.result,
+				"Got", v,
+			)
+		}
+	}
+}
