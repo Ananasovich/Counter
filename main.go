@@ -12,13 +12,13 @@ func main() {
 	filename := os.Args[1]
 	data, err := ioutil.ReadFile(filename)
 	if err != nil {
-		fmt.Println("Ended with error while read file", err)
+		fmt.Println("Ended with error while reading file", err)
 		os.Exit(2)
 	}
 	newfilename := "counted" + filename
 	err = ioutil.WriteFile(newfilename, result(data, filename), 0777)
 	if err != nil {
-		fmt.Println("Ended with error while write result to file", err)
+		fmt.Println("Ended with error while writing result to file", err)
 		os.Exit(2)
 	}
 
